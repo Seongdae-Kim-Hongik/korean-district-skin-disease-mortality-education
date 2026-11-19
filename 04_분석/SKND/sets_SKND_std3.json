@@ -1,0 +1,161 @@
+{
+ "tag": "SKND",
+ "outcome_column": "ext__sknd_deaths",
+ "outcome_label_en": "Deaths from diseases of the skin and subcutaneous tissue (L00-L98, Statistics Korea cause-of-death statistics, annual, place of residence)",
+ "disease_en": "Skin disease mortality",
+ "disease_ko": "피부 질환 사망",
+ "forced": [
+  "eloc__DT_1YL20421E__1인당도시지역면적현황__도시지역인구",
+  "eloc__DT_1YL20981__인구천명당의료기관종사의사수＜br＞(A÷B×1000)",
+  "eloc__DT_1YL20701__남녀성비＜br＞(A÷B×100)",
+  "eloc__DT_1YL20891__재정자주도(세입과목개편전)",
+  "ext__pop80_share"
+ ],
+ "negative_controls": [
+  "eloc__DT_1YL13901__뺑소니교통사고율＜br＞(A÷B×100)",
+  "eloc__DT_1YL20331__지수__계",
+  "eloc__DT_1YL21081__주민만명당화재발생건수＜br＞(A÷B×10000)"
+ ],
+ "offset_E_column": "E_sexage",
+ "offset_E_file": "SKND_Esex.csv",
+ "offset_E_label": "sex-and-age-standardised E, 2 sexes x 18 five-year bands to 85+ (E_sexage, national cause-specific death rates by sex and age)",
+ "graph": "593-edge contact graph (BRCA 2026-11-04 graph_audit), ST_GRAPH=04_분석/SKND/graph_593.graph",
+ "population_override": [
+  {
+   "year": 2023,
+   "fbd_region": "경상남도창원시",
+   "population": 1009038,
+   "source": "KOSIS DT_1YL20651E 2023 통합창원시 계; FBD_DATA_ZIP/2023.csv 창원 블록이 2022값 복사(유방암 11/4 population_final_audit)"
+  }
+ ],
+ "sensitivity_only_extra": [
+  "ext__outside_care_share",
+  "ext__ill_defined_share"
+ ],
+ "sets": {
+  "S1_narrative_full": [
+   "eloc__DT_1YL12701__독거노인가구비율＜br＞(A÷B×100)",
+   "ext__ltc_hospitals_per100k_65",
+   "kchs__DT_H_OR_INCONV__SR",
+   "chk__질환의심_고혈압당뇨_당뇨병_수검자대비비율",
+   "ext__basic_livelihood_rate",
+   "ext__tertiary_educated_share",
+   "ext__genhosp_per100k",
+   "kchs__DT_H_EX_WALK__SR",
+   "kchs__DT_H_EX_PHY__SR",
+   "fac__total"
+  ],
+  "S2_care_gap": [
+   "eloc__DT_1YL12701__독거노인가구비율＜br＞(A÷B×100)",
+   "ext__ltc_hospitals_per100k_65",
+   "kchs__DT_H_OR_INCONV__SR",
+   "ext__basic_livelihood_rate"
+  ],
+  "S3_activity": [
+   "kchs__DT_H_EX_WALK__SR",
+   "kchs__DT_H_EX_PHY__SR",
+   "fac__total"
+  ],
+  "S4_host_access": [
+   "chk__질환의심_고혈압당뇨_당뇨병_수검자대비비율",
+   "ext__genhosp_per100k",
+   "ext__tertiary_educated_share"
+  ],
+  "S5_core": [
+   "eloc__DT_1YL12701__독거노인가구비율＜br＞(A÷B×100)",
+   "ext__ltc_hospitals_per100k_65",
+   "chk__질환의심_고혈압당뇨_당뇨병_수검자대비비율",
+   "kchs__DT_H_EX_WALK__SR",
+   "ext__basic_livelihood_rate"
+  ]
+ },
+ "transform": {
+  "eloc__DT_1YL20421E__1인당도시지역면적현황__도시지역인구": "share_of_pop(도시지역인구÷population(마스터))",
+  "eloc__DT_1YL20981__인구천명당의료기관종사의사수＜br＞(A÷B×1000)": "none",
+  "eloc__DT_1YL20701__남녀성비＜br＞(A÷B×100)": "none",
+  "eloc__DT_1YL20891__재정자주도(세입과목개편전)": "none",
+  "ext__pop80_share": "none",
+  "eloc__DT_1YL13901__뺑소니교통사고율＜br＞(A÷B×100)": "none",
+  "eloc__DT_1YL20331__지수__계": "none",
+  "eloc__DT_1YL21081__주민만명당화재발생건수＜br＞(A÷B×10000)": "none",
+  "chk__질환의심_고혈압당뇨_당뇨병_수검자대비비율": "none",
+  "kchs__DT_H_OR_INCONV__SR": "none",
+  "kchs__DT_H_EX_WALK__SR": "none",
+  "kchs__DT_H_EX_PHY__SR": "none",
+  "fac__total": "per100k",
+  "eloc__DT_1YL12701__독거노인가구비율＜br＞(A÷B×100)": "none",
+  "ext__basic_livelihood_rate": "none",
+  "ext__tertiary_educated_share": "none",
+  "ext__ltc_hospitals_per100k_65": "none",
+  "ext__genhosp_per100k": "none",
+  "ext__ill_defined_share": "none",
+  "ext__outside_care_share": "none"
+ },
+ "expected_direction": {
+  "eloc__DT_1YL12701__독거노인가구비율＜br＞(A÷B×100)": "+",
+  "ext__ltc_hospitals_per100k_65": "+",
+  "kchs__DT_H_OR_INCONV__SR": "+",
+  "chk__질환의심_고혈압당뇨_당뇨병_수검자대비비율": "+",
+  "ext__basic_livelihood_rate": "+",
+  "ext__tertiary_educated_share": "-",
+  "ext__genhosp_per100k": "-",
+  "kchs__DT_H_EX_WALK__SR": "-",
+  "kchs__DT_H_EX_PHY__SR": "-",
+  "fac__total": "-"
+ },
+ "evidence": {
+  "eloc__DT_1YL12701__독거노인가구비율＜br＞(A÷B×100)": "(문헌 단계에서 PMID 확인)",
+  "ext__ltc_hospitals_per100k_65": "(문헌 단계에서 PMID 확인)",
+  "kchs__DT_H_OR_INCONV__SR": "(문헌 단계에서 PMID 확인)",
+  "chk__질환의심_고혈압당뇨_당뇨병_수검자대비비율": "(문헌 단계에서 PMID 확인)",
+  "ext__basic_livelihood_rate": "(문헌 단계에서 PMID 확인)",
+  "ext__tertiary_educated_share": "(문헌 단계에서 PMID 확인)",
+  "ext__genhosp_per100k": "(문헌 단계에서 PMID 확인)",
+  "kchs__DT_H_EX_WALK__SR": "(문헌 단계에서 PMID 확인)",
+  "kchs__DT_H_EX_PHY__SR": "(문헌 단계에서 PMID 확인)",
+  "fac__total": "(문헌 단계에서 PMID 확인)"
+ },
+ "rules": {
+  "likelihood": "forced-only 모형 WAIC 낮은 쪽(Poisson/NB)",
+  "set_choice": "WAIC 최소, 4 이내면 변수 적은 세트",
+  "credible": "95% CrI 1 제외",
+  "vif_drop": 10,
+  "multiverse_specs": 200,
+  "main_model_note": "Principal model = S1_narrative_full (10 district characteristics + 5 forced controls). VIF>10 retained and reported."
+ },
+ "note": "Outcome: deaths from diseases of the skin and subcutaneous tissue (ICD-10 L00-L98). Covariates fixed before fitting: care and frailty (older-adult single-person households, long-term care hospitals per 100,000 aged 65+, chewing discomfort aged 65+, suspected diabetes at screening), social conditions and access (basic livelihood security recipients, tertiary education, general hospitals per 100,000) and physical activity (walking, moderate physical activity, public sports facilities per 100,000); five forced controls; negative control exposures hit-and-run collisions, traffic-culture index and fires; comparison outcomes transport-injury deaths and gastric cancer patients.",
+ "extra_columns": {
+  "ext__pop80_share": [
+   "SKND_Esex.csv",
+   "pop80_share_raw"
+  ],
+  "ext__sknd_deaths": [
+   "EXT_canonical_pool_SKND_261113.csv",
+   "sknd_deaths"
+  ],
+  "ext__basic_livelihood_rate": [
+   "EXT_canonical_pool_SKND_261113.csv",
+   "basic_livelihood_rate"
+  ],
+  "ext__tertiary_educated_share": [
+   "EXT_canonical_pool_SKND_261113.csv",
+   "tertiary_educated_share"
+  ],
+  "ext__ltc_hospitals_per100k_65": [
+   "EXT_canonical_pool_SKND_261113.csv",
+   "ltc_hospitals_per100k_65"
+  ],
+  "ext__genhosp_per100k": [
+   "EXT_canonical_pool_SKND_261113.csv",
+   "genhosp_per100k"
+  ],
+  "ext__ill_defined_share": [
+   "EXT_canonical_pool_SKND_261113.csv",
+   "ill_defined_share"
+  ],
+  "ext__outside_care_share": [
+   "EXT_canonical_pool_261106.csv",
+   "outside_care_share"
+  ]
+ }
+}

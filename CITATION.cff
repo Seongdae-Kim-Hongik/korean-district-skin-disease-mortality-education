@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite it as below."
+title: "Analysis code for very old age, lower education and skin-disease mortality across Korean districts"
+authors:
+  - family-names: Kim
+    given-names: Seongdae
+    affiliation: Hongik University
+    orcid: "https://orcid.org/0000-0002-1525-0091"
+version: "1.0.0"
+date-released: 2026-11-19
+license: MIT
+repository-code: "https://github.com/Seongdae-Kim-Hongik/korean-district-skin-disease-mortality-education"
+doi: 10.5281/zenodo.24358352
